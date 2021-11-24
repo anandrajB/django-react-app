@@ -39,7 +39,7 @@ function Home(login , isAuthenticated) {
 
   const getOperation = async () => {
     const { data } = await axios.get(
-      `http://127.0.0.1:8000/accounts/count/`,
+      `https://jabtracanand.herokuapp.com/accounts/count/`,
       config
     );
     console.log(data.data);

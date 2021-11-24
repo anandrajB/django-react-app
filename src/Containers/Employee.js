@@ -26,7 +26,7 @@ function Employee() {
 
   const getfunction = async () => {
     const { data } = await axios.get(
-      `http://127.0.0.1:8000/accounts/emp/`,
+      `https://jabtracanand.herokuapp.com/accounts/emp/`,
       config
     );
     console.log(data.data);

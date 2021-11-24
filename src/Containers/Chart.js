@@ -33,7 +33,7 @@ options = {
 }
 
 const getOperation=async()=>{
-  const {data} =  await axios.get(`http://127.0.0.1:8000/accounts/count/`,config)
+  const {data} =  await axios.get(`https://jabtracanand.herokuapp.com/accounts/count/`,config)
     console.log(data.data)
     setResult(data.data)
     console.log(setResult)

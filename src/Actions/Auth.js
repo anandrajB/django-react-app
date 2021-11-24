@@ -32,7 +32,7 @@ export const load_user = () => async (dispatch) => {
 
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/accounts/user/`,
+        `https://jabtracanand.herokuapp.com/accounts/user/`,
         config
       );
 
@@ -67,7 +67,7 @@ export const login = (email) => async (dispatch) => {
 
   try {
     const res = await axios.post(
-      `http://127.0.0.1:8000/accounts/login/`,
+      `https://jabtracanand.herokuapp.com/accounts/login/`,
       body,
       config
     );
@@ -96,7 +96,7 @@ export const signup = (email, domain, password) => async dispatch => {
   const body = JSON.stringify({  email, domain, password });
 
   try {
-      const res = await axios.post('http://127.0.0.1:8000/accounts/register/', body, config);
+      const res = await axios.post('https://jabtracanand.herokuapp.com/accounts/register/', body, config);
 
       dispatch({
           type: SIGN_UP_SUCCESS,
@@ -123,7 +123,7 @@ export const checkAuthenticated = (email) => async dispatch => {
 
       try {
         const res = await axios.get(
-          `http://127.0.0.1:8000/accounts/user/`,
+          `https://jabtracanand.herokuapp.com/accounts/user/`,
           config
         );
         dispatch(load_user()); 
@@ -187,7 +187,7 @@ export const logout = () => (dispatch) => {
 
     try {
       const res = axios.post(
-        `http://127.0.0.1:8000/accounts/logout/`,
+        `https://jabtracanand.herokuapp.com/accounts/logout/`,
       );
         console.log('logout success')
       dispatch({
@@ -217,7 +217,7 @@ export const employeecount = () => async (dispatch) => {
 
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/accounts/count/`,
+        `https://jabtracanand.herokuapp.com/accounts/count/`,
         config
       );
 
@@ -252,7 +252,7 @@ export const empcreate = (name, first_dose, second_dose , both, not_both ) => as
   const body = JSON.stringify({ name, first_dose, second_dose , both, not_both  });
 
   try {
-      const res = await axios.post('http://127.0.0.1:8000/accounts/emp/', body, config);
+      const res = await axios.post('https://jabtracanand.herokuapp.com/accounts/emp/', body, config);
 
       dispatch({
           type: EMPLOYEE_REGISTER_SUCCESS,
